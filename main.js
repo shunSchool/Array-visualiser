@@ -24,5 +24,14 @@ function drawArray() {
 document.addEventListener("keydown", keydownHandler);
 
 function keydownHandler(event) {
-    consol.log(event.keyCode)
+    if (event.keyCode === 38) {
+        //up arrow - add 600 the beginning of array
+        myData.splice(0, 0, Math.random() * 600);
+    } else if (event.keyCode === 40) {
+        //down arrow - remove element from beginning
+        myData.splice(0, 1);
+    }
+
+    //re draw the array
+    drawArray();
 }
